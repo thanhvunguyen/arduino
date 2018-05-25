@@ -1,0 +1,23 @@
+{
+  "name": "iot",
+  "description": "Admin",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap-sass": "^3.3.7",
+    "moment": "^2.18.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "awesome-bootstrap-checkbox": "0.3.7",
+    "bootstrap-select": "^1.13.1",
+    "slick-carousel": "^1.8.1"
+  }
+}

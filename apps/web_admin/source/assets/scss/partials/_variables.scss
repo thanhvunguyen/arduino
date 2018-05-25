@@ -1,0 +1,42 @@
+// FONT
+$fs-medium: 12px;
+$fs: 14px;
+$font_main: 'ヒラギノ角ゴ Pro W6', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'MS Pゴシック', 'MS PGothic', 'Helvetica Neue', Helvetica,Arial,sans-serif;
+
+// COLOR
+$text-color: #111;
+$green:#01c853;
+$yellow:#fec107;
+$red:#ff2a00;
+$blue:#2879ff;
+$pink:#e91e63;
+$orange: #ff8e0f;
+$gold:#c4996d;
+$silver:#83878d;
+$black:#212121;
+$grey:#878787;
+$white:#fff;
+$twitter_blue:#00aced;
+$light_grey:rgba(33,33,33,0.1);
+$light_white:rgba(255,255,255,0.1);
+$xtra_lighter_grey:rgba(33,33,33,0.05);
+$xtra_lighter_white:rgba(255,255,255,0.05);
+
+$bg: #f7f7f7;
+
+//screen size
+$screen-xs:                 480px !default;
+$screen-xs-min:             $screen-xs !default;
+$screen-sm:                 768px !default;
+$screen-sm-min:             $screen-sm !default;
+$screen-md:                 992px !default;
+$screen-md-min:             $screen-md !default;
+$screen-lg:                 1200px !default;
+$screen-lg-min:             $screen-lg !default;
+$screen-xs-max:             ($screen-sm-min - 1) !default;
+$screen-sm-max:             ($screen-md-min - 1) !default;
+$screen-md-max:             ($screen-lg-min - 1) !default;
+$screen-lg-max:             1279px;
+$screen-lg-desktop:         1439px;
+$screen-lg-desktop-min:     1440px;
+$screen-promo:              1300px;

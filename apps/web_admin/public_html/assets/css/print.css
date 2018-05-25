@@ -1,0 +1,25 @@
+
+@media print {
+    .panel.panel-default.card-view{
+        border: 0;
+    }
+    .btn,
+    .panel.panel-default.card-view .btn{
+        display: none;
+    }
+    #event-detail-update ul li, .panel-detail li{
+        border: 0 !important;
+    }
+    .print-none{
+        display: none !important;
+    }
+    .print-block{
+        display: block !important;
+    }
+    .panel-detail li div.mt-10{
+        margin-top: 0 !important;
+    }
+    .panel.mih-476{
+        min-height: inherit;
+    }
+}

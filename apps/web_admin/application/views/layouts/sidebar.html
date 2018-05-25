@@ -1,0 +1,28 @@
+<div class="fixed-sidebar-left">
+    <ul class="nav navbar-nav side-nav nicescroll-bar">
+        <li>
+            <a <!--{if !empty($dashboard_flg)}--> class="active" <!--{/if}--> href="/dashboard"><div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i><span class="right-nav-text">ダッシュボード</span></div><div class="clearfix"></div></a>
+        </li>
+        <li>
+            <a <!--{if !empty($end_user_flg) }--> class="active" <!--{/if}-->href="/end_user/list"><div class="pull-left"><i class="zmdi zmdi-account-box mr-20"></i><span class="right-nav-text">利用ユーザー管理</span></div><div class="clearfix"></div></a>
+        </li>
+        <li>
+            <a <!--{if !empty($service_user_flg)}--> class="active" <!--{/if}-->href="/service_user/list"><div class="pull-left"><i class="zmdi zmdi-accounts-list-alt mr-20"></i><span class="right-nav-text">サービスユーザー管理</span></div><div class="clearfix"></div></a>
+        </li>
+        <li>
+            <li>
+            <a <!--{if !empty($score_flg)}--> class="active" <!--{/if}--> href="#" data-toggle="collapse" data-target="#contentSub"><div class="pull-left"><i class="zmdi zmdi-collection-text mr-20"></i><span class="right-nav-text">成績管理</span></div><div class="clearfix"></div></a>
+            <ul id="contentSub" class="collapse collapse-level-1">
+            <li>
+            <a <!--{if ($type==$smarty.const.LATEST_SCORE)}--> class="active-page" <!--{/if}--> href="/score/list?type=latest_score">最新スコア</a>
+            </li>
+            <li>
+            <a <!--{if ($type==$smarty.const.AVERAGE_SCORE)}--> class="active-page" <!--{/if}--> href="/score/list?type=average_score">平均スコア</a>
+            </li>
+            </ul>
+            </li>
+
+        </li>
+
+    </ul>
+</div>

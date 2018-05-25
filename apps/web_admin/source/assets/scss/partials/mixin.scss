@@ -1,0 +1,31 @@
+@mixin background-opacity($color, $opacity: 0.6) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin clear() {
+  overflow:hidden;
+  clear:both;
+  float:none;
+}
+
+// ellipsis
+@mixin ellipsis($max-height, $line-number){
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: $max-height;//em
+  line-height: $max-height/$line-number;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: $line-number;
+  -webkit-box-orient: vertical;
+  //min-height: $max-height;
+}
+//ellipsis one row
+@mixin single-line($width){
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: $width;
+}

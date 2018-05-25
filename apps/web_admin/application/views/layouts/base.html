@@ -1,44 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <!--{include file="layouts/html_head.html"}-->
 </head>
-<body class="<!--{if !empty($smarty.cookies.ddjui_menu_toggle) && $smarty.cookies.ddjui_menu_toggle == 'small'}-->nav-sm<!--{else}-->nav-md<!--{/if}-->">
-<div class="container body">
-    <div class="main_container">
-        <!--{if empty($meta.without_header)}-->
-        <!--{include file="layouts/header.html"}-->
+<body>
+<div class="wrapper pa-0">
+    <!--{if !empty($is_login)}-->
+    <!--{include file='layouts/header.html'}-->
+    <!--{/if}-->
+    <!--{if !empty($is_login)}-->
+    <div class="page-wrapper">
         <!--{/if}-->
-
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <div>
-                <!--{if !empty($flash_msg)}-->
-                <div class="alert alert-danger" style="margin-top: 60px;"><!--{$flash_msg}--></div>
-                <!--{/if}-->
-
-                <!--{if !empty($flash_msg_success)}-->
-                <div class="alert alert-success" style="margin-top: 60px;"><!--{$flash_msg_success}--></div>
-                <!--{/if}-->
-
-                <!--{content_yield name="main"}-->
-            </div>
-        </div>
-
-        <!-- footer content -->
-        <div class="clearfix"></div>
-
-        <footer>
-            <div class="pull-right">
-                Copyright &copy; <!--{$meta.site_name}-->
-            </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-
-        <!--{include file="layouts/footer.html"}-->
+        <!--{content_yield name="main"}-->
+        <!--{if !empty($is_login)}-->
+        <!--{include file='layouts/footer.html'}-->
     </div>
+    <!--{/if}-->
 </div>
-
+<!-- /#wrapper -->
+<!--{include file='layouts/script.html'}-->
 </body>
 </html>

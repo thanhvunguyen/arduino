@@ -1,0 +1,13 @@
+<!-- Breadcrumb -->
+<div class="col-xs-12">
+    <ol class="breadcrumb mb-15">
+        <!--{foreach from=$breadcrumb key=key item=bc name=breadcrumb}-->
+        <!--{if isset($bc.link)}-->
+            <li><a href="<!--{$bc.link|escape|default:''}-->"><!--{$bc.name|escape|default:''}--></a></li>
+        <!--{else}-->
+            <li class="txt-dark"><!--{$bc.name|escape|default:''}--></li>
+        <!--{/if}-->
+        <!--{/foreach}-->
+    </ol>
+</div>
+<!-- /Breadcrumb -->

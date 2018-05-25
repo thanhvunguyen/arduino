@@ -1,2 +1,0 @@
-[Fri May 25 06:25:14.093844 2018] [mpm_prefork:notice] [pid 20] AH00163: Apache/2.4.7 (Ubuntu) OpenSSL/1.0.1f configured -- resuming normal operations
-[Fri May 25 06:25:14.136524 2018] [core:notice] [pid 20] AH00094: Command line: '/usr/sbin/apache2 -D FOREGROUND'

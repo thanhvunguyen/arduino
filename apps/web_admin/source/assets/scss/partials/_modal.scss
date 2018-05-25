@@ -1,0 +1,33 @@
+.modal{
+  .close{
+    text-shadow: none;
+    color: $white;
+  }
+  .modal-footer{
+    text-align: center;
+    .btn{
+      padding: 10px 15px
+    }
+  }
+  textarea{
+    height: 180px;
+    resize: none;
+  }
+}
+#modalAlert.in{
+  background-color: transparentize($black, 0.5);
+}
+@media (min-width: $screen-sm-min){
+  .modal {
+    &.modal-xs {
+      .modal-dialog {
+        width: 420px;
+      }
+    }
+    &.modal-md {
+      .modal-dialog {
+        width: 750px;
+      }
+    }
+  }
+}

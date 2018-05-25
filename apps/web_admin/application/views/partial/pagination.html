@@ -1,0 +1,83 @@
+<!--{if isset($pagination) && $pagination.total != 0}-->
+    <!--{$default_display = $pagination.const.NUMBER_PAGE_SHOW}-->
+    <!--{$total_page = ceil($pagination.total/$pagination.limit)}-->
+    <!--{if $total_page < $default_display }-->
+        <!--{$min_display = 1}-->
+        <!--{$max_display = $total_page}-->
+    <!--{else}-->
+        <!--{if $pagination.p < $default_display/2}-->
+            <!--{$min_display = 1}-->
+            <!--{$max_display = $default_display}-->
+        <!--{else if $pagination.p > $total_page - ($default_display - 1)/2}-->
+            <!--{$min_display = $total_page - ($default_display -1)}-->
+            <!--{$max_display = $total_page }-->
+        <!--{else}-->
+            <!--{$min_display = $pagination.p - ($default_display - 1)/2 }-->
+            <!--{$max_display = $pagination.p + ($default_display - 1)/2 }-->
+        <!--{/if}-->
+    <!--{/if}-->
+
+    <!--{if $total_page > 1}-->
+    <ul class="pagination pagination-sm pull-left">
+        <!--{if $pagination.p > 1}-->
+        <!--{$pagination.params.p = ($pagination.p <= $default_display) ?  1 :  $pagination.p - ($pagination.const.GO_TO_10)}-->
+            <li>
+                <a href="?<!--{http_build_query($pagination.params)}-->">
+                    <i class="fa fa-angle-double-left"></i>
+                </a>
+            </li>
+        <!--{$pagination.params.p = $pagination.p - 1}-->
+            <li>
+                <a class="paginate_button previous" href="?<!--{http_build_query($pagination.params)}-->">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            </li>
+        <!--{/if}-->
+
+        <!--{for $p=($min_display) to $max_display }-->
+            <!--{$pagination.params.p = $p}-->
+            <li <!--{if $pagination.p == $p}--> class="active" <!--{/if}--> >
+                <a href="?<!--{http_build_query($pagination.params)}-->"> <!--{$p}--> </a>
+            </li>
+        <!--{/for}-->
+
+        <!--{if $pagination.p < $total_page}-->
+            <!--{$pagination.params.p = $pagination.p + 1}-->
+            <li>
+                <a href="?<!--{http_build_query($pagination.params)}-->">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+            <!--{$pagination.params.p = ($total_page < $pagination.p + (($pagination.const.GO_TO_10))) ?  $total_page :  $pagination.p + (($pagination.const.GO_TO_10))}-->
+            <li>
+                <a href="?<!--{http_build_query($pagination.params)}-->">
+                    <i class="fa fa-angle-double-right"></i>
+                </a>
+            </li>
+        <!--{/if}-->
+    </ul>
+    <!--{/if}-->
+
+    <div class="pull-right">
+        <div class="total-pages text-right mt-10 mb-10">
+            <!--{if $pagination.p <  $total_page}-->
+                <span class="count"><!--{($pagination.p - 1)*$pagination.limit + 1}-->~<!--{$pagination.limit * $pagination.p}--> </span> / <span class="total"><!--{number_format($pagination.total)}--></span>
+            <!--{else}-->
+                <span class="count"><!--{($pagination.p - 1)*$pagination.limit + 1}-->~<!--{$pagination.total}--></span> / <span class="total"><!--{number_format($pagination.total)}--></span>
+            <!--{/if}-->
+        </div>
+        <!--{if $pagination.total >=  20}-->
+        <div class="display-number">
+            <span class="mr-10">1ページの表示件数</span>
+            <ul class="list-unstyled list-inline inline-block">
+                <!--{$pagination.params.p = 1}-->
+                <!--{foreach from=$pagination.const.LIMITS item=item}-->
+                    <!--{$pagination.params.limit = $item}-->
+                    <li <!--{if ($pagination.limit == $item)}--> class="active" <!--{/if}-->><a href="?<!--{http_build_query($pagination.params)}-->"><!--{$item}--></a></li>
+                <!--{/foreach}-->
+            </ul>
+        </div>
+        <!--{/if}-->
+    </div>
+<!--{/if}-->
+<div class="clearfix"></div>
