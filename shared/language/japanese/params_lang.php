@@ -1,0 +1,70 @@
+<?php
+
+$lang["login_id"] = "ログインID";
+$lang["password"] = "パスワード";
+$lang["auto_login"] = "自動ログイン";
+$lang["service_id"] = "サービスID";
+$lang["service_name"] = "サービス名";
+$lang["company_name"] = "会社名";
+$lang["postal_code"] = "郵便番号";
+$lang["prefecture_id"] = "都道府県";
+$lang["address"] = "市区町村";
+$lang["street_number"] = "番地";
+$lang["contact_person_name"] = "担当者名";
+$lang["phone_number"] = "電話番号";
+$lang["email"] = "メールアドレス";
+$lang["user_usage"] = "ユーザー利用方法";
+$lang["number_of_user_limit"] = "利用ユーザー数限定";
+$lang["number_of_user"] = "利用ユーザー数";
+$lang["service_type"] = "サービスタイプ";
+$lang["number_of_service_user_issued"] = "サービスユーザー発行数";
+$lang["date_start_service"] = "サービス利用開始日";
+$lang["billing_amount"] = "請求金額";
+$lang["billing_term"] = "請求ターム";
+$lang["distributor"] = "代理店";
+$lang["ip_address"] = "IPアドレス";
+$lang["ip_block"] = "ブロックIP情報";
+$lang["user_name"] = "ユーザー名";
+$lang["user_id"] = "ユーザーID";
+$lang["password_confirm"] = "パスワード（確認用）";
+$lang["input_method"] = "入力方式";
+$lang["csv_upload"] = "例文ファイル";
+$lang["table_name"] = "テーブル名";
+$lang["section"] = "セクション";
+$lang["content_name"] = "コンテンツ名";
+$lang["sct"] = "SCT";
+$lang["typing_type"] = "タイピング種別";
+$lang["num_load_ex_sentence"] = "ロード例文数";
+$lang["shaffle_ex"] = "例文シャッフル(flash側)";
+$lang["sns_button"] = "SNSボタン";
+$lang["sns_control"] = "SNS制御";
+$lang["sns_url"] = "SNS_URL";
+$lang["control_register_result"] = "成績登録制御";
+$lang["control_register_ranking"] = "ランキング登録制御";
+$lang["practice_result"] = "練習結果";
+$lang["control_show_roma_kana"] = "ローマ字/かな表示制御";
+$lang["control_show_kana"] = "ふりがな表示制御";
+$lang["category_name"] = "カテゴリ";
+$lang["status"] = "ステータス";
+$lang["num_ex_load_starter"] = "レッスンモード時ロード例文数";
+$lang["num_ex_load_easy"] = "レッスンモード時ロード例文数";
+$lang["easy_ex_lesson_mode"] = "レッスンモード時やさしい例文";
+$lang["lesson_mode"] = "レッスンモード機能";
+$lang["show_text_result"] = "結果画面テキスト表示";
+$lang["time_limit"] = "タイピング時間制限";
+$lang["mistype_flg"] = "ミスだけボタン機能";
+$lang["typing_content_id"] = "タイピングコンテンツID";
+$lang["time_limit"] = "タイピング時間制限";
+$lang["login_user_id"] = "ユーザーID";
+$lang["authority"] = "権限";
+$lang["goal_score"] = "目標スコア";
+$lang["japanese_sentence"] = "日本語文";
+$lang["hiragana_sentence"] = "かな";
+$lang["alphabet_sentence"] = "アルファベット";
+$lang["end_user_id"] = "利用ユーザーID";
+$lang["token"] = "トークン";
+$lang["attribute"] = "属性";
+
+
+
+

@@ -1,0 +1,30 @@
+{
+    "name": "yukiyamashina/qdmail",
+    "type": "library",
+    "description": "Qdmail forked from spok",
+    "keywords": ["mail", "Qdmail"],
+    "homepage": "https://github.com/YukiYamashina/qdmail",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yuki Yamashina",
+            "email": "anonymousf91@gmail.com",
+            "homepage": "https://yukiyamashina.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=5.6.2"
+    },
+    "config": {
+        "vendor-dir": "vendor/"
+    },
+    "autoload": {
+        "psr-4": {
+            "Qd\\": "src/"
+        }
+    }
+}

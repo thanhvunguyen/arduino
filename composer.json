@@ -1,0 +1,23 @@
+{
+    "name": "SmartTicket Project",
+    "description": "SmartTicket Project based on CodeIgniter3 framework",
+    "type": "project",
+    "authors": [
+        {
+            "name": "NAL Solutions",
+            "email": "info@nal.vn"
+        }
+    ],
+    "config": {
+        "vendor-dir": "shared/third_party"
+    },
+    "require": {
+        "php": "^7.0",
+        "aws/aws-sdk-php": "^3.31",
+        "apache/log4php": "^2.3",
+        "kenjis/ci-phpunit-test": "^0.15.0",
+        "smarty/smarty": "^3.1",
+        "yukiyamashina/qdmail": "^0.1.0",
+        "pear/pear-core-minimal": "^1.10"
+    }
+}

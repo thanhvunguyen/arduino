@@ -1,0 +1,97 @@
+<div class="col-md-3 left_col">
+<div class="left_col scroll-view">
+    <div class="navbar nav_title" style="border: 0;">
+        <a href="/" class="site_title"><span><!--{$meta.site_name}--></span></a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+            <ul class="nav side-menu">
+
+                <!--{if $CI->current_user->has_role('order')}-->
+                <li><a href="/order">
+                    <i class="fa fa-shopping-cart"></i> Order
+                </a></li>
+                <!--{/if}-->
+
+                <!--{if $CI->current_user->has_role('tour')}-->
+                <li>
+                    <a>
+                        <i class="fa fa-file-text-o"></i> Tours
+                        <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu" style="display: none;">
+                        <li><a href="/">All</a></li>
+                    <!--{foreach from=$category_list item=item}-->
+                        <li>
+                            <a href="javascript:"><!--{$item.name}--> <!--{if !empty($item.tour_count)}--><span style="font-weight: 100;"><!--{$item.tour_count}--></span><!--{/if}--> <span class="fa fa-chevron-down"></span></a>
+
+                            <ul class="nav child_menu">
+                                <li><a href="/category/<!--{$item.id}-->">All</a></li>
+
+                                <!--{foreach from=$item.category_tag item=sub_item}-->
+                                <li class="sub_menu"><a href="/category/<!--{$sub_item.category_id}-->/<!--{$sub_item.id}-->"><!--{$sub_item.name}--></a></li>
+                                <!--{/foreach}-->
+                            </ul>
+
+                        </li>
+                    <!--{/foreach}-->
+                    </ul>
+                </li>
+
+                <li><a href="/keyword"><i class="fa fa-key"></i> <!--{__ s="Keyword"}--></a></li>
+                <li><a href="/language"><i class="fa fa-language"></i> <!--{__ s="Language"}--></a></li>
+                <!--{/if}-->
+
+                <!--{if $CI->current_user->has_role('super_admin')}-->
+                <li>
+                    <a>
+                        <i class="fa fa-file-text-o"></i> <!--{__ s="Material"}-->
+                        <span class="fa fa-chevron-down"></span>
+                    </a>
+                    <ul class="nav child_menu" style="display: none;">
+                        <li><a href="/material/url_tour_list">1. <!--{__ s="URL List"}--></a></li>
+                        <li><a href="/material/imported_tour_list">2. <!--{__ s="Imported Tour List"}--></a></li>
+                        <li><a href="/material/draft_tour_list">3. <!--{__ s="Draft Tour List"}--></a></li>
+                        <li><a href="/material/candidate_tour_list">4. <!--{__ s="Candidate Tour List"}--></a></li>
+                    </ul>
+                </li>
+                <!--{/if}-->
+
+            </ul>
+        </div>
+    </div>
+    <!-- sidebar menu -->
+
+</div>
+</div>
+
+
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <nav class="" role="navigation">
+            <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="javascript:" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <!--{$CI->current_user->login_id|default:'Guest'}-->
+                        <span class=" fa fa-angle-down"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                        <li><a href="/setting"><i class="fa fa-cog pull-right"></i> Setting</a></li>
+                        <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</div>
+<!-- /top navigation -->
