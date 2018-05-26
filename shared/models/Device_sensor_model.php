@@ -38,7 +38,7 @@ class Device_sensor_model extends APP_Model
 
         $this->join('sensor_seq', 'infor_sensor.sensor_seq = sensor_seq.sensor_seq');
 
-        $this->where('DATE(sensor_seq.sensor_time)', '2018-05-17');
+        $this->where('DATE(sensor_seq.sensor_time)', '2018-05-17'); // Ngay hom nay: business_date('Y-m-d')
 
         return $this->all();
     }
