@@ -24,4 +24,27 @@ class Infor_sensor_model extends APP_Model
      * @var string
      */
     public $primary_key = ['sensor_cd', 'sensor_seq'];
+
+    /**
+     * @param null $sensor_cd
+     * @return array
+     */
+    public function get_sensor_detail($sensor_cd = null) {
+
+        if (empty($sensor_cd)) {
+            return [];
+        }
+
+        $this->select('infor_sensor.sensor_seq, infor_sensor.sensor_temp, 
+            infor_sensor.sensor_humi')
+            ->select('sensor_seq.sensor_time');
+
+        $this->join('sensor_seq', 'infor_sensor.sensor_seq = sensor_seq.sensor_seq');
+
+        $this->where('infor_sensor.sensor_cd', $sensor_cd);
+
+        $this->order_by('sensor_seq.sensor_time', 'DESC');
+
+        return $this->all();
+    }
 }

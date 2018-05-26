@@ -22,10 +22,14 @@ class Top extends Application_controller
     }
 
     /**
-     * Index
+     * @throws APP_Api_internal_call_exception
+     * @throws APP_DB_exception_duplicate_key_entry
+     * @throws APP_Exception
      */
     public function index()
     {
+        $view_data = [];
 
+        return $this->_render($view_data);
     }
 }
