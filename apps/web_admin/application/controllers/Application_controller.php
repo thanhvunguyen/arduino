@@ -62,10 +62,12 @@ class Application_controller extends APP_Controller
      */
     public function __construct()
     {
+
+
         parent::__construct();
 
-        $this->_before_filter('_find_current_user');
-        $this->_before_filter('_require_login');
+//        $this->_before_filter('_find_current_user');
+//        $this->_before_filter('_require_login');
 
         // profilerを無効化
         $this->output->enable_profiler(FALSE);
@@ -352,89 +354,6 @@ class Application_controller extends APP_Controller
             'without_header' => !empty($config['without_header']) ? TRUE : FALSE,
             'without_footer' => !empty($config['without_footer']) ? TRUE : FALSE,
         ];
-    }
-
-    /**
-     * Find current user on user site
-     */
-    public function _find_current_user()
-    {
-        // Load model
-        $this->load->model('account_model');
-
-        $this->current_user = new APP_Anonymous_operator;
-        APP_Model::set_operator($this->current_user);
-
-        // Get user login
-        $user_id_cookie = $this->get_user_remember_login();
-        $user_id_session = $this->session->userdata('user_id');
-        $user_id = ($user_id_cookie) ? $user_id_cookie : $user_id_session;
-
-        if (empty($user_id)) {
-            return;
-        }
-
-        $this->session->set_userdata('user_id', $user_id);
-
-        // Load model
-        $this->load->model('account_login_token_model');
-
-        $res = $this->account_login_token_model->find_by([
-            'account_id' => $user_id,
-        ]);
-
-        // If not sign in before
-        if (empty($res)) {
-            return;
-        }
-
-        // If is not auto login
-        if (! $this->session->auto_login()) {
-            if (time() >  strtotime($res->updated_at) + $this->session->_default_auto_logout) {
-                $this->_api('auth')->logout();
-                return;
-            }
-        }
-
-        $this->account_login_token_model->update($user_id, [
-            'user_agent' => $this->input->user_agent(),
-            'remote_ip' => $this->input->ip_address()
-        ]);
-
-        $user = $this->account_model
-            ->select('account_id, name, name_kana, login_password, account_type, client_code, login_id')
-            ->select('invalid_flag, account_lock_flag, created_at, updated_at')
-            ->find($user_id);
-
-        if (empty($user) || $user->invalid_flag === FLAG_TRUE || $user->account_lock_flag === FLAG_TRUE) {
-            return;
-        }
-
-        // If session has user_data
-        $this->session->set_userdata('user_id', $user->account_id);
-        $this->current_user = $user;
-        APP_Model::set_operator($this->current_user);
-    }
-
-    private function get_user_remember_login()
-    {
-        $key_cookie = $this->config->item('key_user_login_cookie');
-        $value = isset($_COOKIE[$key_cookie]) ? $_COOKIE[$key_cookie] : null;
-
-        if (empty($value)) {
-            return FALSE;
-        }
-
-        require_once SHAREDPATH . 'third_party/firebase/php_jwt/JWT.php';
-        $jwt = new Firebase\JWT\JWT();
-
-        try {
-            $decode = $jwt->decode($value, $this->config->item('key_user_login'), ['HS256']);
-
-            return $decode;
-        } catch (Exception $exception) {
-            return FALSE;
-        }
     }
 
     /**

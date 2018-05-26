@@ -56,5 +56,5 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 |--------------------------------------------------------------------------
 */
 if (!defined('DB_MAIN')) {
-    define('DB_MAIN', 'st_main');
+    define('DB_MAIN', 'arduino_main');
 }

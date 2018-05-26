@@ -38,5 +38,9 @@
 |
 */
 
-$route['default_controller'] = 'top';
+ $route['default_controller'] = 'user';
 $route['404_override'] = '';
+
+$route['login'] = 'user/login';
+
+$route['dashboard'] = 'top/index';

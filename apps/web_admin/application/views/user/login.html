@@ -7,35 +7,21 @@
                     <div class="row">
                         <div class="col-sm-12 col-xs-12">
                             <div class="mb-30">
-                                <h3 class="text-center txt-dark mb-10">バーコードチェッカー</h3>
-                                <h6 class="text-center nonecase-font txt-grey">メールアドレスとパスワードを<br/>
-                                    入力してください。</h6>
-                                <!--{if !empty($errmsg)}-->
-                                <p class="mt-5 alert alert-info text-center">
-                                    <!--{$errmsg|escape|default:''}-->
-                                </p>
-                                <!--{/if}-->
+                                <h3 class="text-center txt-dark mb-10">Arduino</h3>
                             </div>
                             <div class="form-wrap">
                                 <form action="/user/login" method="post">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="email" name="email" placeholder="メールアドレス" value="<!--{$post.email|escape|default:''}-->">
+                                        <input type="text" class="form-control" id="email" name="login_id" placeholder="login id" value="<!--{$post.login_id|escape|default:''}-->">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="password"  name="password" placeholder="パスワード">
+                                        <input type="password" class="form-control" id="password"  name="password" placeholder="password">
                                         <div class="help-block with-errors"></div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <div class="checkbox checkbox-primary pr-10 pull-left">
-                                            <input id="checkbox_2" name="auto_login" type="checkbox" <!--{if isset($post.auto_login) && $post.auto_login == 'on'}-->checked<!--{/if}-->>
-                                            <label for="checkbox_2">ログインしたままにする</label>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
                                     <div class="form-group text-center">
-                                        <button type="submit" class="btn btn-info btn-rounded">ログイン</button>
+                                        <button type="submit" class="btn btn-info btn-rounded">Login</button>
                                     </div>
                                 </form>
                             </div>

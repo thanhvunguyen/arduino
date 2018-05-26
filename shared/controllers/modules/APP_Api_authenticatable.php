@@ -17,63 +17,7 @@
  */
 trait APP_Api_authenticatable
 {
-    /**
-     * 認証処理対象モデル名
-     * @var string
-     */
-    protected $authentication_target_model = "user_model";
 
-    /**
-     * 認証を有効にする
-     *
-     * @access protected
-     * @param string $target
-     */
-    protected function _enable_authentication($target = "user_model")
-    {
-        $this->authentication_target_model = $target;
-
-        $this->_before_filter('_find_current_user');
-        $this->_before_filter('_require_login');
-    }
-
-    /**
-     * ログインユーザー検索
-     *
-     * @access public
-     */
-    public function _find_current_user()
-    {
-        $this->load->model($this->authentication_target_model);
-
-        $token = $this->input->server("HTTP_X_API_TOKEN");
-        if (empty($token)) {
-            return;
-        }
-
-        $target = $this->{$this->authentication_target_model}->available()->find_by(array('token' => $token));
-        if (empty($target)) {
-            return;
-        }
-
-        $this->current_user = $target;
-
-        if ($target instanceof APP_Operator) {
-            APP_Model::set_operator($target);
-        }
-    }
-
-    /**
-     * ログイン認証
-     *
-     * @access public
-     */
-    public function _require_login()
-    {
-        if (empty($this->current_user) || !$this->current_user->is_login()) {
-            $this->_false_json(APP_Response::UNAUTHORIZED);
-        }
-    }
 }
 
 
