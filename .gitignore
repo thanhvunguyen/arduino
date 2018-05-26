@@ -1,18 +1,41 @@
-*/config/development
-*/logs/log-*.php
-!*/logs/index.html
-*/cache/*
-!*/cache/index.html
-!*/cache/.htaccess
+# Created by .ignore support plugin (hsz.mobi)
+apps/*/application/config/database.php
+apps/*/application/config/appcofing.php
+apps/*/application/config/development/
+apps/*/application/logs/*.*
+apps/*/application/logs/*.php
+apps/*/application/tmp/templates_c/*.php
 
-user_guide_src/build/*
-user_guide_src/cilexer/build/*
-user_guide_src/cilexer/dist/*
-user_guide_src/cilexer/pycilexer.egg-info/*
+tools/application/config/database.php
+tools/application/config/appcofing.php
+tools/application/config/development/
+tools/application/tmp/templates_c/*.php
+tools/application/logs/**.log
+tools/application/logs/**.php
+tools/application/tmp/sqlite/**.db
 
-#codeigniter 3
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
-/vendor/
-.idea/*
+tests/application/logs/**.log
+tests/application/logs/**.php
+
+shared/config/appconfig.php
+shared/config/database.php
+shared/config/development/
+
+apps/*/web_tools/node_modules/
+apps/*/web_tools/npm-debug.log
+apps/*/public_html/third_party/bower_components/
+
+misc/schema/enews.mwb.bak
+
+tools/barcode_output/*
+
+.settings
+.project
+.idea
+**.DS_Store
+**/*/*.mwb.bak
+**.svn
+/.idea
+apps/admin/public_html/public/include
+!apps/admin/public_html/public/vendors/bower_components
+!apps/service_admin/public_html/public/vendors/bower_components
